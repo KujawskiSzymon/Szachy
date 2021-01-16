@@ -1,0 +1,61 @@
+﻿@model Szachy.Models.Gracz
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<h2 class="text-info">Stwórz</h2>
+<form method="post" asp-action="Create">
+    <div class="border backgroundWhite">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="Imie" class="col-form-label"></label>
+            </div>
+            <div class="col-8">
+                <input asp-for="Imie" class="form-control" />
+            </div>
+            <br/>
+            <span asp-validation-for="Imie" class="text-danger"></span>
+            <div class="col-3">
+                <label asp-for="Nazwisko" class="col-form-label"></label>
+            </div>
+            <div class="col-8">
+                <input asp-for="Nazwisko" class="form-control" />
+            </div>    <br/>
+            <span asp-validation-for="Nazwisko" class="text-danger"></span>
+            <div class="col-3">
+                <label asp-for="Ranking" class="col-form-label"></label>
+            </div>
+            <div class="col-8">
+                <input asp-for="Ranking" class="form-control" />
+            </div>   <br/>
+            <span asp-validation-for="Ranking" class="text-danger"></span>
+            <div class="col-3">
+                <label asp-for="Plec" class="col-form-label"></label>
+            </div>
+            <div class="col-3">
+                <input asp-for="Plec" class="form-control" />
+            </div>   <br/>
+            <span asp-validation-for="Plec" class="text-danger"></span>
+        </div>
+        <div class="row form-group">
+            <div class="col-5 offset-2">
+                <br />
+                <div class="row">
+                    <div class="col-6">
+                        <input type="submit" class="btn btn-info form-control" value="Stwórz" />
+                    </div>
+                    <div class="col-6">
+                        <a asp-action="Index" class="btn btn-success form-control">Powrót</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+  </form>

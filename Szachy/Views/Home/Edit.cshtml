@@ -1,0 +1,48 @@
+﻿@model Szachy.Models.ViewModels.Graczklub
+
+
+
+
+
+    <div class="border backgroundWhite">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="Gracz.Nazwisko" class="col-form-label"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="Gracz.Nazwisko" readonly class="form-control" />
+            </div>
+            <span asp-validation-for="Gracz.Nazwisko" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="Gracz.Imie" class="col-form-label"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="Gracz.Imie" readonly class="form-control" />
+            </div>
+            <span asp-validation-for="Gracz.Imie" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="Klub" class="col-form-label"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="Klub" readonly class="form-control" />
+                @if (Model.Klub == "Brak")
+                {
+                    <div class="btn-group" role="group">
+                        <a class="btn btn-primary text-white" asp-action="AddClub" asp-route-Id="@Model.Gracz.Id">
+                            ADD
+                        </a>
+                    </div>
+                }
+            </div>
+            <span asp-validation-for="Gracz.Nazwisko" class="text-danger"></span>
+        </div>
+        
+    </div>
+
+
+

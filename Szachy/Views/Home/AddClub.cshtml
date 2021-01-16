@@ -1,0 +1,49 @@
+﻿@model Szachy.Models.ViewModels.GraczDoKlubu
+
+@{
+    ViewData["Title"] = "Dodaj Klub";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+    <h2 class="text-info">Dodaj gracza do klubu</h2>
+<table class="table table-striped border">
+    <tr class="table-secondary">
+        <th>
+            Nazwa Klubu
+        </th>
+        <th>
+            Liga
+        </th>
+        <th>
+            Opcje
+        </th>
+
+
+    </tr>
+    @foreach (var item in Model.k)
+    {
+        
+        <tr>
+            <td>
+                @Html.DisplayFor(n => item.Nazwa)
+            </td>
+            <td>
+                @Html.DisplayFor(n => item.Liga)
+            </td>
+            <td>
+                <div class="btn-group" role="group">
+                    <a class="btn btn-primary text-white" asp-action="GraczDoKlubu" asp-route-IdK="@item.Id" asp-route-Id="@Model.giki.idGracz">
+                        Dodaj
+                    </a>
+                </div>
+            </td>
+        </tr>
+
+    }
+</table>
+
+<br />
+
+
+

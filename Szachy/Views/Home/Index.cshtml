@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Szachy.Models.Gracz>
+@{
+    ViewData["Title"] = "Lista Graczy";
+}
+
+<div class="text-center">
+
+
+    <p>Kujawski Szymon - Szachy.</p>
+</div>
+<div class="col-12 text-right">
+    <p>
+        <a asp-action="Create" class="btn-block">Stwórz nowego gracza</a>
+    </p>
+</div>
+
+</p>
+<table class="table table-striped border">
+    <tr class="table-secondary">
+        <th>
+            Imie
+        </th>
+        <th>
+            Nazwisko
+        </th>
+        <th>
+            Ranking
+        </th>
+        <th>
+            Opcje
+        </th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+
+<tr>
+    <td>
+        @Html.DisplayFor(n => item.Imie)
+    </td>
+    <td>
+        @Html.DisplayFor(n => item.Nazwisko)
+    </td>
+    <td>
+        @Html.DisplayFor(n => item.Ranking)
+    </td>
+    <td>
+        <partial name="_TablePartial" model="item.Id"/>
+</td>
+</tr>
+
+
+
+    }
+</table>

@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Szachy.Models.Klub>
+@{
+    ViewData["Title"] = "Lista Klubow";
+}
+
+
+<div class="col-12 text-right">
+    <p>
+        <a asp-action="CreateKlub" class="btn-block">Stwórz Klub</a>
+    </p>
+</div>
+<table class="table table-striped border">
+    <tr class="table-secondary">
+        <th>
+            Nazwa Klubu
+        </th>
+        <th>
+            Liga
+        </th>
+        <th>
+            Info
+        </th>
+       
+
+    </tr>
+    @foreach (var item in Model)
+    {
+
+<tr>
+    <td>
+        @Html.DisplayFor(n => item.Nazwa)
+    </td>
+    <td>
+        @Html.DisplayFor(n => item.Liga)
+    </td>
+    <td>
+    <partial name="_TablePartialClub" model="item.Id" />
+    </td>
+</tr>
+
+    }
+</table>

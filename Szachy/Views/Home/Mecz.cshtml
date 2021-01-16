@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Szachy.Models.ViewModels.GraczMecz>
+@{
+    ViewData["Title"] = "Lista Meczy";
+}
+
+
+<div class="col-12 text-right">
+    <p>
+        <a asp-action="CreateMecz" class="btn-block"> Stwórz Mecz</a>
+    </p>
+</div>
+<table class="table table-striped border">
+    <tr class="table-secondary">
+        <th>
+            Biale
+        </th>
+        <th>
+            Czarne
+        </th>
+        <th>
+            Wynik
+        </th>
+        <th>
+            Data
+        </th>
+
+
+    </tr>
+    @foreach (var item in Model)
+    {
+
+<tr>
+    <td>
+        @Html.DisplayFor(n => item.GraczANazwisko) @Html.DisplayFor(n => item.GraczAImie)
+    </td>
+    <td>
+        @Html.DisplayFor(n => item.GraczBNazwisko) @Html.DisplayFor(n => item.GraczBImie)
+    </td>
+    <td>
+        @Html.DisplayFor(n => item.wynik)
+    </td>
+    <td>
+        @Html.DisplayFor(n => item.Mecz.Data)
+    </td>
+</tr>
+
+    }
+</table>
