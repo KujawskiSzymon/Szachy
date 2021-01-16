@@ -101,7 +101,7 @@ namespace Szachy.Controllers
                 
                 ModelState.AddModelError("error", "Podane błędne dane");
                 return View();
-            }
+            }//
             mecz.Data = DateTime.Now;
             if (ModelState.IsValid)
             {
